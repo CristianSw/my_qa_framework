@@ -1,0 +1,14 @@
+[
+  {
+    "login" : "cristian.dolinta@example.com",
+    "passwd" : "TestPasswd1234",
+    "productName" : "zara coat 3",
+    "expectedMessage" : "Thankyou for the order."
+  },
+  {
+    "login" : "cristian.dolinta@example.com",
+    "passwd" : "TestPasswd1234",
+    "productName" : "ADIDAS ORIGINAL",
+    "expectedMessage" : "Thankyou for the order."
+  }
+]

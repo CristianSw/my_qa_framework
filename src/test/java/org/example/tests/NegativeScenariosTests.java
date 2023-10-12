@@ -1,23 +1,24 @@
 package org.example.tests;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.example.page_objects.CartPage;
 import org.example.page_objects.ProductsPage;
 import org.example.test_components.BaseTest;
+import org.example.test_components.Retry;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.List;
 
 public class NegativeScenariosTests extends BaseTest {
 
-    @Test(groups = {"negative"})
+    @Test(groups = {"negative"},retryAnalyzer = Retry.class)
     public void loginFailTest() {
         String expectedErrorMessage = "Incorrect email or password.";
         loginPage.loginToApp("somewronglogin@example.com", "somewrongpasswd");
         String actualErrorMessage = loginPage.getErrorMessage();
         Assert.assertEquals(actualErrorMessage ,expectedErrorMessage);
-
     }
     @Test
     public void productNotMatchValidation(){

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-public class StandalonePageFactoryTest extends BaseTest {
+public class SubmitOrderTest extends BaseTest {
 
     @Test(dataProvider = "getData", groups = "purchase")
     public void submitOrder(HashMap<String, String> input) throws IOException {

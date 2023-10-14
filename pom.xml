@@ -95,14 +95,7 @@
                             <configuration>
                                 <suiteXmlFiles>
                                     <file>testSuites/testng.xml</file>
-                                    <!--                        <file>src/test/resources/testng2.xml</file>-->
                                 </suiteXmlFiles>
-                                <!--                    <properties>-->
-                                <!--                        <property>-->
-                                <!--                            <name>suitethreadpoolsize</name>-->
-                                <!--                            <value>2</value>-->
-                                <!--                        </property>-->
-                                <!--                    </properties>-->
                             </configuration>
                         </plugin>
                     </plugins>
@@ -132,14 +125,7 @@
                             <configuration>
                                 <suiteXmlFiles>
                                     <file>testSuites/purchase.xml</file>
-                                    <!--                        <file>src/test/resources/testng2.xml</file>-->
                                 </suiteXmlFiles>
-                                <!--                    <properties>-->
-                                <!--                        <property>-->
-                                <!--                            <name>suitethreadpoolsize</name>-->
-                                <!--                            <value>2</value>-->
-                                <!--                        </property>-->
-                                <!--                    </properties>-->
                             </configuration>
                         </plugin>
                     </plugins>
@@ -169,14 +155,7 @@
                             <configuration>
                                 <suiteXmlFiles>
                                     <file>testSuites/negative.xml</file>
-                                    <!--                        <file>src/test/resources/testng2.xml</file>-->
                                 </suiteXmlFiles>
-                                <!--                    <properties>-->
-                                <!--                        <property>-->
-                                <!--                            <name>suitethreadpoolsize</name>-->
-                                <!--                            <value>2</value>-->
-                                <!--                        </property>-->
-                                <!--                    </properties>-->
                             </configuration>
                         </plugin>
                     </plugins>
@@ -184,7 +163,7 @@
             </build>
         </profile>
         <profile>
-            <id>CucumberTests</id>
+            <id>Cucumber</id>
             <build>
                 <pluginManagement>
                     <plugins>

@@ -7,7 +7,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -26,15 +28,19 @@ public class BaseTest {
         Properties properties = new Properties();
         FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//org//example//ressources//GlobalData.properties");
         properties.load(fileInputStream);
-        String browserWanted = System.getProperty("browser") != null ?
-                System.getProperty("browser") : properties.getProperty("browser");
-
+        String browserWanted = System.getProperty("browser") != null ? System.getProperty("browser") : properties.getProperty("browser");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
 
         if (browserWanted.equalsIgnoreCase("firefox")) {
-            driver = new FirefoxDriver();
+            // Add the headless option for Firefox
+            firefoxOptions.addArguments("--headless");
+            driver = new FirefoxDriver(firefoxOptions);
         } else if (browserWanted.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
-
+//            System.setProperty("webdriver.chrome.driver","//usr//bin//chromedriver");
+            // Add the headless option for Chrome
+            chromeOptions.addArguments("--headless");
+            driver = new ChromeDriver(chromeOptions);
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
@@ -70,4 +76,7 @@ public class BaseTest {
 
     }
 }
+
+
+
 

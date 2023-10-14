@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   jenkins:
-    image: jenkins/jenkins:lts-jdk17
-    container_name: jenkins
+    image: custom-jenkins-with-maven  # Use your custom image
+    container_name: jenkins-custom-with-maven
     privileged: true
     user: root
     ports:
@@ -11,3 +11,4 @@ services:
     volumes:
       - /home/cristian/jenkins_compose/jenkins_configuration:/var/jenkins_home
       - /var/run/docker
+      - /home/cristian/eclipse-selenium/my_qa_framework:/var/jenkins_home/workspace/my_qa_framework
